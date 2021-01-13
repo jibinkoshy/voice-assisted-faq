@@ -20,7 +20,7 @@ export const FaqPage = ({ index, setIndex }) => {
       </Box>
       <Accordion allowToggle index={index}>
         {FAQ_LIST.map(faq => (
-          <AccordionItem key={faq.id}>
+          <AccordionItem key={faq.id} name={`accordion-item-${faq.id}`}>
             <AccordionButton onClick={() => setIndex(faq.id - 1)}>
               <Box flex="1" textAlign="left">
                 <Text fontWeight="semibold">{faq.question}</Text>
