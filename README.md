@@ -1,6 +1,6 @@
 # E-commerce FAQ Voice Controlled powered by Alan AI
 
-##### Tech Stack Used
+## Tech Stack Used
 
 - React
 - Alan AI (https://alan.app/)
