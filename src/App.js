@@ -9,6 +9,7 @@ export const App = () => {
   const alanBtnInstance = useRef(null);
 
   const [index, setIndex] = useState(null);
+  const [toggleColorFlag, setToggleColorFlag] = useState(false);
 
   useEffect(() => {
     if (!alanBtnInstance.current) {
@@ -23,6 +24,8 @@ export const App = () => {
               smooth: 'easeInOutQuart',
             });
             setIndex(commandData.faqId - 1);
+          } else if (commandData.command === 'toggleColorMode') {
+            setToggleColorFlag(flag => !flag);
           }
         },
       });
@@ -30,7 +33,7 @@ export const App = () => {
   }, []);
   return (
     <ChakraProvider theme={theme}>
-      <Navbar />
+      <Navbar toggleColorFlag={toggleColorFlag} />
       <FaqPage index={index} setIndex={setIndex} />
     </ChakraProvider>
   );
