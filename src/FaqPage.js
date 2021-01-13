@@ -12,16 +12,16 @@ import {
 } from '@chakra-ui/react';
 import FAQ_LIST from './faq.json';
 
-export const FaqPage = () => {
+export const FaqPage = ({ index, setIndex }) => {
   return (
     <Flex direction="column" p="4">
       <Box mb="8">
         <Heading size="md"> Frequently asked Question</Heading>
       </Box>
-      <Accordion>
+      <Accordion allowToggle index={index}>
         {FAQ_LIST.map(faq => (
           <AccordionItem key={faq.id}>
-            <AccordionButton>
+            <AccordionButton onClick={() => setIndex(faq.id - 1)}>
               <Box flex="1" textAlign="left">
                 <Text fontWeight="semibold">{faq.question}</Text>
               </Box>
